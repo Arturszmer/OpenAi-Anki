@@ -48,7 +48,7 @@ public class ChatService {
         ChatCompletionRequest request = ChatCompletionRequest.builder()
                 .model(GPT4_1106_PREVIEW.getModel())
                 .messages(List.of(chatMessage))
-                .maxTokens(5000)
+                .maxTokens(4000)
                 .temperature(1.0)
                 .build();
         return openAiApi.chat(request);
