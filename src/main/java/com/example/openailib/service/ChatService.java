@@ -20,7 +20,7 @@ public class ChatService {
 
     private final OpenAiIntegration openAiApi;
 
-    public void englishImprover(ChatMessage userMessage) {
+    public String englishImprover(ChatMessage userMessage) {
 
         try {
             String systemContent = CustomUtils.readMarkdownFile("templates/grammatical-improvement.md");
@@ -33,11 +33,14 @@ public class ChatService {
                     .temperature(0.2)
                     .build();
             ChatCompletionResponse chat = openAiApi.chat(request);
-            System.out.println(chat.getChoices().get(0).getMessage().getContent());
+            String response = chat.getChoices().get(0).getMessage().getContent();
+            System.out.println(response);
+            return response;
         } catch (Exception e){
             log.warn(e.getMessage());
             System.out.println("Something went wrong! Chat is not working");
         }
+        return "";
     }
 
     public ChatCompletionResponse conversation(ChatMessage chatMessage) {
