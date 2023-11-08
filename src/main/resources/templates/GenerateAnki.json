@@ -1,0 +1,22 @@
+{
+  "name":"GenerateAnki",
+  "description":"From the text you get, choose difficult words and translate them to Polish. The knowledge level will be set in parameter object as language-level",
+  "parameters":{
+    "type":"object",
+    "properties":{
+      "flashCards": {
+        "type": "array",
+        "description": "Put english word into 'front' field and polish meaning into 'back' field",
+        "items": {
+          "front":{
+          "type":"string"
+        },
+          "back":{
+            "type":"string"
+          }
+        }
+
+      }
+    }
+  }
+}
