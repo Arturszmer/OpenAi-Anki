@@ -28,7 +28,8 @@ public class MyConsole {
             if ("exit".equalsIgnoreCase(command)) {
                 break;
             } else {
-                chatService.englishImprover(new ChatMessage(USER.getRole(), command));
+                ChatCompletionResponse conversation = chatService.conversation(new ChatMessage(command, USER.getRole()));
+                System.out.println(conversation.getChoices().get(0).getMessage().getContent());
             }
         }
 
