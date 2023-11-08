@@ -79,7 +79,7 @@ This class ensures that requests to the OpenAI API are properly authenticated, m
 
 ## Console Interface
 
-A `MyConsole` class is provided to interact with the app via a console interface. Users can start a conversation with the chat-based model and request grammatical improvements for their input.
+A `MyConsole` class is provided to interact with the app via a console interface. Users can start a conversation with the chat-based model.
 
 ## Main Application
 
